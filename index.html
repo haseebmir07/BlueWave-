@@ -53,7 +53,7 @@
             <div class="col-lg-9 col-md-12 text-end">
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <i class="fa fa-map-marker-alt text-primary me-2"></i>
-                    <p class="m-0">Avalahalli-JP Nagar 9th Phase, Karnataka, India</p>
+                    <p class="m-0">Bangalore-JP Nagar 9th Phase, Karnataka, India</p>
                 </div>
                 <div class="h-100 d-inline-flex align-items-center me-4">
                     <i class="far fa-envelope-open text-primary me-2"></i>
@@ -61,8 +61,8 @@
                 </div>
                 <div class="h-100 d-inline-flex align-items-center">
                     <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
-                    <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <!-- <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a> -->
+                    <!-- <a class="btn btn-sm-square bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a> -->
                     <a class="btn btn-sm-square bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
@@ -172,7 +172,7 @@
                                 <h1 class="display-3 text-white animated slideInDown mb-4">Efficient Residential Geyser Services</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2">We provide reliable commercial geyser installation, repair, and maintenance services with quick response times and certified technicians across Bangalore.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact Now</a>
+                                <a href="contact.html" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact Now</a>
                             </div>
                         </div>
                     </div>
@@ -188,7 +188,7 @@
                                 <h1 class="display-3 text-white animated slideInDown mb-4">Efficient Commercial Geyser Services</h1>
                                 <p class="fs-5 fw-medium text-white mb-4 pb-2">Get hassle-free commercial geyser services including installation, repairs, and annual maintenance by experienced professionals you can trust.</p>
                                 <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">Read More</a>
-                                <a href="" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact Now</a>
+                                <a href="contact.html" class="btn btn-secondary py-md-3 px-md-5 animated slideInRight">Contact Now</a>
                             </div>
                         </div>
                     </div>
@@ -518,39 +518,89 @@
                 <div class="col-lg-8">
                     <div class="bg-light text-center p-5">
                         <h1 class="mb-4">Book For A Service</h1>
-                        <form>
-                            <div class="row g-3">
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Geyser Repair & Services</option>
-                                        <option value="2">All Geyser Repair & Services</option>
-                                        <option value="3">Commercial Geyser Services</option>
-                                        <option value="3">Installation of Geysers</option>
-                                        <option value="3">Water Heater Repair</option>
-                                    </select>
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <div class="date" id="date1" data-target-input="nearest">
-                                        <input type="text"
-                                            class="form-control border-0 datetimepicker-input"
-                                            placeholder="Service Date" data-target="#date1" data-toggle="datetimepicker" style="height: 55px;">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Special Request"></textarea>
-                                </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary w-100 py-3" type="submit">Book Now</button>
-                                </div>
-                            </div>
-                        </form>
+                       <form action="https://api.web3forms.com/submit" method="POST">
+
+    <!-- Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="6626c83f-05d9-4a2f-b683-5532e8188c82">
+
+    <div class="row g-3">
+        <div class="col-12 col-sm-6">
+            <input 
+                type="text" 
+                name="name" 
+                class="form-control border-0" 
+                placeholder="Your Name" 
+                style="height: 55px;" 
+                required>
+        </div>
+
+        <div class="col-12 col-sm-6">
+            <input 
+                type="email" 
+                name="email" 
+                class="form-control border-0" 
+                placeholder="Your Email" 
+                style="height: 55px;" 
+                required>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="col-12 col-sm-6">
+            <input 
+                type="tel" 
+                name="phone" 
+                class="form-control border-0" 
+                placeholder="Phone Number" 
+                style="height: 55px;"
+                pattern="[0-9]{10}" 
+                maxlength="10"
+                inputmode="numeric"
+                required>
+        </div>
+
+        <!-- Service Dropdown -->
+        <div class="col-12 col-sm-6">
+            <select 
+                name="service" 
+                class="form-select border-0" 
+                style="height: 55px;" 
+                required>
+                <option value="" disabled selected>Select A Service</option>
+                <option value="Geyser Repair & Services">Geyser Repair & Services</option>
+                <option value="All Geyser Repair & Services">All Geyser Repair & Services</option>
+                <option value="Commercial Geyser Services">Commercial Geyser Services</option>
+                <option value="Installation of Geysers">Installation of Geysers</option>
+                <option value="Water Heater Repair">Water Heater Repair</option>
+            </select>
+        </div>
+
+        <!-- Service Date -->
+        <div class="col-12 col-sm-6">
+            <input 
+                type="date" 
+                name="service_date" 
+                class="form-control border-0" 
+                style="height: 55px;"
+                required>
+        </div>
+
+        <!-- Message -->
+        <div class="col-12">
+            <textarea 
+                name="message" 
+                class="form-control border-0" 
+                placeholder="Special Request" 
+                required></textarea>
+        </div>
+
+        <div class="col-12">
+            <button class="btn btn-primary w-100 py-3" type="submit">
+                Book Now
+            </button>
+        </div>
+    </div>
+</form>
+
                     </div>
                 </div>
             </div>
@@ -725,7 +775,7 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-light mb-4">Address</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Avalahalli-JP Nagar 9th Phase, Karnataka, India</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Bangalore-JP Nagar 9th Phase, Karnataka, India</p>
                     <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+91 8722211431</p>
                     <p class="mb-2"><i class="fa fa-envelope me-3"></i>bluewavegeyser@gmail.com</p>
                     <div class="d-flex pt-2">
